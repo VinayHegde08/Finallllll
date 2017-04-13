@@ -22,7 +22,7 @@ getMyIssuedHistory(mid:string,date:string,token):Observable<Data[]>{
       console.log("in search service");
       let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-     return this.http.get('http://172.17.120.138:9890/lims/getMyIssuedHistory/'+mid+'/'+date,options)
+     return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getMyIssuedHistory/'+mid+'/'+date,options)
      .map((res:Response)  => res.json());
   }
 }

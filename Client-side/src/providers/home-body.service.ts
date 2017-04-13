@@ -26,38 +26,38 @@ export class HomeBodyService {
     let options = new RequestOptions({ headers: headers });
 
     console.log("hiee")
-    return this.http.get("http://172.17.120.138:9890/lims/getmyMobileAssetBookIds/" + id, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/getmyMobileAssetBookIds/" + id, options)
       .map((res: Response) => res.json());
   }
   getMyBook(id: string, name: string, token): Observable<data[]> {
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/getmyAsset/" + id + "/" + name, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/getmyAsset/" + id + "/" + name, options)
       .map((res: Response) => res.json());
   }
   returnRequest(mid: string, bookId: string, token): Observable<data[]> {
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/returnRequest/" + mid + "/" + bookId, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/returnRequest/" + mid + "/" + bookId, options)
       .map((res: Response) => res.json());
   }
   renewBook(mid: string, bookId: string, token){
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/renewBook/" + bookId + "/" + mid, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/renewBook/" + bookId + "/" + mid, options)
       .map((res: Response) => res);
   }
   rating(mid: string, isbn: string, value: number, token): Observable<data> {
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/rating/" + mid + "/" + isbn + "/" + value, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/rating/" + mid + "/" + isbn + "/" + value, options)
       .map((res: Response) => res.json());
   }
 
   createProfile(mid: string, name: string, email: string, token) {
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/createProfile/" + mid + "/" + name + "/" + email, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/createProfile/" + mid + "/" + name + "/" + email, options)
       .map((res: Response) => res);
   }
 cancelRequset(mid:string,isbn:string,token){
@@ -65,7 +65,7 @@ cancelRequset(mid:string,isbn:string,token){
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.get("http://172.17.120.138:9890/lims/declineRequest/" + mid + "/" + isbn , options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/declineRequest/" + mid + "/" + isbn , options)
       .map((res: Response) => res); 
   }
 

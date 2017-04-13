@@ -30,7 +30,7 @@ export class WishListService {
     console.log('in addtowishlist---------->' + isbn + '' + mId);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/addtowishlist/" + mId + "/" + isbn)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/addtowishlist/" + mId + "/" + isbn)
       .map((res: Response) => res.json());
   }
   getBookDetails(mId: string, token): Observable<Data[]> {
@@ -38,7 +38,7 @@ export class WishListService {
     console.log('in addtowishlist' + mId);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/getisbndetails/" + mId, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/getisbndetails/" + mId, options)
       .map((res: Response) => res.json());
   }
   getWishBookDetails(mId: string, token): Observable<Data[]> {
@@ -46,14 +46,14 @@ export class WishListService {
     console.log('in getwishbookdetail' + mId);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/getwishlist/" + mId, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/getwishlist/" + mId, options)
       .map((res: Response) => res.json());
   }
   removeBook(isbn:string,mid:string,token):Observable<Data[]> {
     console.log('in remove wishlist' + mid);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/removewishlist/" + mid + "/" + isbn, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/removewishlist/" + mid + "/" + isbn, options)
       .map((res: Response) => res.json());
   }
 

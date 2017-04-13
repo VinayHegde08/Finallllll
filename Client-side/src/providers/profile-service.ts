@@ -20,13 +20,13 @@ export class ProfileService {
     updateProfile(mid, genre,token):Observable<Data[]>{
        let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-          return this.http.get('http://172.17.120.138:9890/lims/updateUserProfile/'+mid+'/'+genre,options)
+          return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/updateUserProfile/'+mid+'/'+genre,options)
               .map((res:Response)=>res.json()) ;
             }
  getMyGenre(mid,token){
        let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-          return this.http.get('http://172.17.120.138:9890/lims/getMyFavGenre/'+mid,options)
+          return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getMyFavGenre/'+mid,options)
               .map((res:Response)=>res) ;
             }
 

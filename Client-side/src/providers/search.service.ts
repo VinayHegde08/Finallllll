@@ -27,7 +27,7 @@ token;
       console.log("in search service");
        let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-     return this.http.get('http://172.17.120.138:9890/lims/getCategoryWiseBooks/'+category,options)
+     return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getCategoryWiseBooks/'+category,options)
      .map((res:Response)  => res.json());
   }
    getCategories(token):Observable<Data[]>{
@@ -35,7 +35,7 @@ token;
 
        let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-     return this.http.get('http://172.17.120.138:9890/lims/getCategories',options)
+     return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getCategories',options)
      .map((res:Response)  => res.json());
   }
 
@@ -43,14 +43,14 @@ token;
      console.log("token-------by adal",token);
      let headers = new Headers({ 'Authorization': 'Bearer ' + token });
       let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/getAllBooks',options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getAllBooks',options)
      .map((res:Response)  => res.json());
   }
       getAllBook():Observable<Data[]>{
       console.log('inside service getallbooks2');
      let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
       let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/getAllBooks',options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getAllBooks',options)
      .map((res:Response)  => res.json());
   }
 }

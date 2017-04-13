@@ -27,7 +27,7 @@ export class TransferAdminService {
         console.log('inside Admin service');
         let headers = new Headers({ 'Authorization': 'Bearer ' + token });
         let options = new RequestOptions({ headers: headers });
-        return this.http.get("http://172.17.120.138:9890/lims/getAllAdminDetails",options)
+        return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/getAllAdminDetails",options)
             .map((res: Response) => res.json());
     }
     newAdmin(AdminId:string,token){
@@ -36,6 +36,6 @@ export class TransferAdminService {
         let headers = new Headers({ 'Authorization': 'Bearer ' + token });
         let options = new RequestOptions({ headers: headers });
         console.log('---->2',options);
-        return this.http.get("http://172.17.120.138:9890/lims/transferAccess/"+this.mid+"/"+AdminId,options)
+        return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/transferAccess/"+this.mid+"/"+AdminId,options)
     }
 }

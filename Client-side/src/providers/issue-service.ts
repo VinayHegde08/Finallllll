@@ -23,7 +23,7 @@ export class IssueService {
   issue(mid, isbn, issueDate, dueDate, token): Observable<Response> {
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/issueBook/' + mid + '/' + isbn + '/' + issueDate + '/' + dueDate, options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/issueBook/' + mid + '/' + isbn + '/' + issueDate + '/' + dueDate, options)
       .map((res: Response) => res);
   }
 
@@ -31,14 +31,14 @@ export class IssueService {
     console.log("Called", mid);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/requestBook/' + mid + '/' + isbn, options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/requestBook/' + mid + '/' + isbn, options)
       .map((res: Response) => res);
   }
 
   availabilty(isbn, token): Observable<data[]> {
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/availableBooks/' + isbn, options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/availableBooks/' + isbn, options)
       .map((res: Response) => res.json());
   }
 

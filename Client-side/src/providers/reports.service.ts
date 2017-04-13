@@ -24,14 +24,14 @@ export class GetReportsService {
       console.log('inside service getallbooks----2');
      let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
       let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/getAllIssuedBooksHistory',options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getAllIssuedBooksHistory',options)
      .map((res:Response)  => res.json());
   }
   getAllReturnedHistory():Observable<Data[]>{
       console.log('inside service getallbooks2');
      let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
       let options = new RequestOptions({ headers: headers });
-    return this.http.get('http://172.17.120.138:9890/lims/getAllReturnedBooksHistory',options)
+    return this.http.get('https://webtechsolutionsapi.azurewebsites.net/lims/getAllReturnedBooksHistory',options)
      .map((res:Response)  => res.json());
   }
 }

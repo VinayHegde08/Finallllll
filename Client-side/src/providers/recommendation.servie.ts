@@ -26,7 +26,7 @@ export class RecommendationService {
     console.log('in addto' + mid);
     let headers = new Headers({ 'Authorization': 'Bearer ' + token });
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://172.17.120.138:9890/lims/recommend/" + mid, options)
+    return this.http.get("https://webtechsolutionsapi.azurewebsites.net/lims/recommend/" + mid, options)
       .map((res: Response) => res.json());
   }
 }
